@@ -1,0 +1,25 @@
+{
+  "name": "test-project",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "server": "webpack-dashboard -- webpack-dev-server --inline --port 8080",
+    "webdriver-update": "webdriver-manager update",
+    "dev": "npm run development"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SunTriraphat/test-project.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/SunTriraphat/test-project/issues"
+  },
+  "homepage": "https://github.com/SunTriraphat/test-project#readme",
+  "dependencies": {
+    "socket.io": "^4.7.1"
+  }
+}
