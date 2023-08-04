@@ -92,8 +92,14 @@ class addressController extends Controller
 
     public function edit(tb_addresses $address, Request $request)
     {
-
-        return view('addresses.edit', compact('address'));
+        $admin = Auth::user()->is_admin;
+        $email = Auth::user()->email;
+        if ($admin == 1) {
+            $data['user'] = User::orderBy('id', 'desc')->paginate(5);
+        } else {
+            $data['user'] = User::where('email', 'like', '%' . $email . '%')->paginate(5);
+        }
+        return view('addresses.edit', compact('address'),$data);
     }
 
     public function update($id, $detail, $reference)

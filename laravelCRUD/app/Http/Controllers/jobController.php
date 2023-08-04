@@ -98,7 +98,6 @@ class jobController extends Controller
         $jobs->save();
         return response()->json([
             'success' => 'edit Success',
-
         ], 201);
         // return redirect()->with('success', 'Edit success');
     }
@@ -107,8 +106,6 @@ class jobController extends Controller
 
     {
         $jobs = tb_job::find($id);
-        
-
         $jobs->delete();
         return response()->json([
             'success' => 'delete Success',
